@@ -5,25 +5,25 @@ import { auth } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
 
 const deleteTransaction = async (transactionId: string) => {
-    const { userId } = auth();
-    if(!userId) {
-        return { error: "User not found" };
-    }
+  const { userId } = auth();
+  if (!userId) {
+    return { error: "User not found" };
+  }
 
-    try {
-        await db.transaction.delete({
-            where: {
-                id: transactionId,
-                userId
-            }
-        })
+  try {
+    await db.transaction.delete({
+      where: {
+        id: transactionId,
+        userId,
+      },
+    });
 
-        revalidatePath("/");
+    revalidatePath("/");
 
-        return { message: 'Transaction deleted' };
-    } catch (error) {
-        return { error: 'Transaction not deleted' };
-    }
-}
+    return { message: "Transaction deleted" };
+  } catch (error) {
+    return { error: "Transaction not deleted" };
+  }
+};
 
 export default deleteTransaction;
