@@ -1,6 +1,6 @@
 "use client";
 
-import Transaction from "@/types/transaction";
+import Transaction from "@/types/Transaction";
 import { formatCurrency } from "@/lib/utils";
 import { toast } from "react-toastify";
 import deleteTransaction from "../actions/deleteTransaction";
