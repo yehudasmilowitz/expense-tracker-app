@@ -1,4 +1,4 @@
-import Transaction from "@/types/transaction";
+import Transaction from "@/types/Transaction";
 import getTransactions from "../actions/getTransactions";
 import TransactionItem from "./TransactionItem";
 
