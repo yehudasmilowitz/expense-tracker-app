@@ -3,6 +3,7 @@ import Guest from "@/app/components/Guest";
 import AddTransaction from "@/app/components/AddTransaction";
 import Balance from "@/app/components/Balance";
 import IncomeExpense from "@/app/components/IncomeExpense";
+import TransactionList from "@/app/components/TransactionList";
 
 const HomePage = async () => {
   const user = await currentUser();
@@ -16,6 +17,7 @@ const HomePage = async () => {
       <Balance />
       <IncomeExpense />
       <AddTransaction />
+      <TransactionList />
     </main>
   );
 };

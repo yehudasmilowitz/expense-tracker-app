@@ -1,4 +1,4 @@
-import { addCommas } from "@/lib/utils";
+import { formatCurrency } from "@/lib/utils";
 import getUserBalance from "../actions/getUserBalance";
 
 const Balance = async () => {
@@ -9,7 +9,7 @@ const Balance = async () => {
       <br />
       <div>
         <h4>Your Balance</h4>
-        <h1>{addCommas(balance ?? 0)}</h1>
+        <h1>{formatCurrency(balance ?? 0)}</h1>
       </div>
     </div>
   );
